@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="../stats/style.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        <label for="login-username">Username:</label>
+        <input id="login-username" name="username" title="Enter your username" placeholder="Username"><br>
+        <label for="login-password">Password:</label>
+        <input id="login-password" type="password" name="password" title="Enter your password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+        <label for="register-username">Username:</label>
+        <input id="register-username" name="username" title="Enter your username" placeholder="Username"><br>
+        <label for="register-password">Password:</label>
+        <input id="register-password" type="password" name="password" title="Enter your password" placeholder="Password"><br>
+        <label for="register-email">Email:</label>
+        <input id="register-email" name="email" title="Enter your email address" placeholder="Email"><br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

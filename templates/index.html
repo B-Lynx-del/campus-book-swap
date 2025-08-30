@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AI Study Buddy</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Book Swap</title>
+    <link rel="stylesheet" href="../stats/style.css">
 </head>
 <body>
-    <h1>AI Study Buddy</h1>
-    <textarea id="inputText" placeholder="Enter study notes..."></textarea>
-    <button onclick="generateFlashcards()">Generate</button>
-    <div id="flashcards"></div>
-    <button onclick="unlockPremium()">Unlock Premium ($1 via InterSed)</button>
+    <h1>Book Listings</h1>
+    <a href="/post">Post a Book</a>
+    <input id="search" placeholder="Search for recommendations...">
+    <button onclick="getRecommendations()">Recommend</button>
+    <div id="recommendations"></div>
+    <ul>
+    {% for book in books %}
+        <li>
+            {{ book.title }} by {{ book.author }} - ${{ book.price }} ({{ book.condition }}, {{ book.type }})
+            <button onclick="message('{{ book.owner_id }}', '{{ book.id }}')">Message Seller</button>
+            <button onclick="buy('{{ book.id }}')">Buy</button>
+        </li>
+    {% endfor %}
+    </ul>
     <script src="/static/script.js"></script>
 </body>
 </html>

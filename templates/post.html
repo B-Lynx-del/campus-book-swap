@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Book</title>
+    <link rel="stylesheet" href="../stats/style.css">
+</head>
+<body>
+    <h1>Post a Book</h1>
+    <form method="POST">
+        <label for="title">Title:</label>
+        <input id="title" name="title" title="Book Title" placeholder="Enter book title"><br>
+
+        <label for="author">Author:</label>
+        <input id="author" name="author" title="Book Author" placeholder="Enter author name"><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" title="Book Description" placeholder="Enter book description"></textarea><br>
+
+        <label for="price">Price:</label>
+        <input id="price" name="price" type="number" title="Book Price" placeholder="Enter price"><br>
+
+        <label for="condition">Condition:</label>
+        <input id="condition" name="condition" title="Book Condition" placeholder="Enter book condition"><br>
+
+        <label for="type">Type:</label>
+        <select id="type" name="type" title="Transaction Type">
+            <option value="sell">sell</option>
+            <option value="trade">trade</option>
+            <option value="buy">buy</option>
+        </select><br>
+        <button type="submit">Post</button>
+    </form>
+</body>
+</html>
