@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Book Swap</title>
-    <link rel="stylesheet" href="../stats/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <h1>Book Listings</h1>
@@ -13,13 +11,16 @@
     <button onclick="getRecommendations()">Recommend</button>
     <div id="recommendations"></div>
     <ul>
-    {% for book in books %}
+        {% for book in books %}
         <li>
             {{ book.title }} by {{ book.author }} - ${{ book.price }} ({{ book.condition }}, {{ book.type }})
-            <button onclick="message('{{ book.owner_id }}', '{{ book.id }}')">Message Seller</button>
-            <button onclick="buy('{{ book.id }}')">Buy</button>
+            <select id="payment-{{ book.id }}" onchange="updatePaymentMethod({{ book.id }})">
+                <option value="paystack">Paystack (Cards, M-Pesa)</option>
+            </select>
+            <button onclick="message({{ book.owner_id }}, {{ book.id }})">Message Seller</button>
+            <button onclick="buy({{ book.id }})">Buy</button>
         </li>
-    {% endfor %}
+        {% endfor %}
     </ul>
     <script src="/static/script.js"></script>
 </body>
