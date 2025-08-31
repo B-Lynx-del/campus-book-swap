@@ -4,3 +4,5 @@ sentence-transformers
 scikit-learn
 torch
 python-dotenv
+gunicorn
+requests
