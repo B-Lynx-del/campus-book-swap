@@ -45,9 +45,12 @@ def generate():
     
     return jsonify(questions)
 
-@app.route('/monetize', methods=['POST'])  # Demo endpoint for InterSed
-    # In real: Integrate InterSed API for payment
-    return jsonify({"message": "Premium unlocked via InterSed!"})
+@app.route('/buy', methods=['POST'])
+def buy():
+    # Simulate InterSed payment
+    book_id = request.json['book_id']
+    # In real: Call InterSed API with os.getenv('INTERSED_API_KEY')
+    return jsonify({"message": "Purchase processed via InterSed (5% fee applied)!"})
 
 if __name__ == '__main__':
     app.run(debug=True)
